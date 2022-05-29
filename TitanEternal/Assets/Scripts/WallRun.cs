@@ -30,6 +30,7 @@ public class WallRun : MonoBehaviour
 
     private bool wallLeft = false;
     private bool wallRight = false;
+    public bool isWallRunning = false;
 
 
     RaycastHit leftWallHit;
@@ -65,20 +66,24 @@ public class WallRun : MonoBehaviour
             {
                 StartWallRun();
                 Debug.Log("wall running on the left");
+                isWallRunning = true;
             }
             else if (wallRight)
             {
                 StartWallRun();
                 Debug.Log("wall running on the right");
+                isWallRunning = true;
             }
             else
             {
                 StopWallRun();
+                isWallRunning = false;
             }
         }
         else
         {
             StopWallRun();
+            isWallRunning = false;
         }
     }
 
